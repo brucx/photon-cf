@@ -1,0 +1,30 @@
+{
+  "name": "worker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy --config wrangler.test.toml",
+    "release": "wrangler deploy --config wrangler.prod.toml",
+    "upload": "wrangler versions upload --experimental-versions --config wrangler.prod.toml",
+    "dev": "wrangler dev --test-scheduled --config wrangler.test.toml",
+    "start": "wrangler dev --config wrangler.test.toml",
+    "cf-typegen": "wrangler types --config wrangler.test.toml",
+    "cf-typegen-prod": "wrangler types --config wrangler.prod.toml",
+    "logs": "wrangler tail --config wrangler.test.toml",
+    "logs-prod": "wrangler tail --config wrangler.prod.toml"
+  },
+  "dependencies": {
+    "@jsquash/webp": "^1.4.0",
+    "@silvia-odwyer/photon": "^0.3.2",
+    "chanfana": "^2.0.4",
+    "hono": "^4.6.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "@types/node": "20.8.3",
+    "@types/service-worker-mock": "^2.0.1",
+    "typescript": "^5.4.5",
+    "wrangler": "^3.80.0"
+  }
+}
